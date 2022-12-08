@@ -1,0 +1,13 @@
+.banner__wrapper {
+  &_img {
+    width: 100%;
+  }
+
+  div[class^="swiper-button"],
+  .swiper-pagination-bullet {
+    color: $color-main;
+    &:hover {
+      color: $color-main-hover;
+    }
+  }
+}
