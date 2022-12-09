@@ -3,11 +3,16 @@
     width: 100%;
   }
 
-  div[class^="swiper-button"],
-  .swiper-pagination-bullet {
+  div[class^="swiper-button"] {
     color: $color-main;
     &:hover {
       color: $color-main-hover;
+    }
+  }
+  .swiper-pagination-bullet {
+    background-color: $color-main;
+    &:hover {
+      background-color: $color-main-hover;
     }
   }
 }

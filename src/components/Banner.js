@@ -1,21 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Navigation, Pagination, Autoplay, Lazy } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import API from "../Api";
 
-const Banner = () => {
-  const [banner, setBanner] = useState([]);
-  useEffect(() => {
-    API.get(`trending/anime`).then((res) => {
-      setBanner(res.data.data);
-    });
-    return () => {
-      setBanner([]);
-    };
-  }, []);
+const Banner = (props) => {
+  const { data } = props;
   return (
     <Swiper
       className="banner__wrapper"
@@ -32,7 +24,7 @@ const Banner = () => {
       }}
       pagination={{ clickable: true }}
     >
-      {banner.map((item, key) => {
+      {data.map((item, key) => {
         const { attributes } = item;
         return (
           <SwiperSlide key={key}>

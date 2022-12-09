@@ -5,24 +5,28 @@ html {
 body {
   font-size: 1.6rem;
   font-family: Quicksand, sans-serif;
+  background-color: $bg-color;
 }
 
 .container {
-  max-width: 1054px;
+  max-width: 120rem;
   margin-left: auto;
   margin-right: auto;
   padding: 0 15px;
 
   @include tablet() {
-    max-width: 992px;
+    max-width: 99.2rem;
   }
 
   @include mobile() {
-    max-width: 767px;
+    max-width: 76.7rem;
   }
 }
 // Header
 .header {
+  position: fixed;
+  z-index: 99999;
+  width: 100%;
   background-color: white;
   padding: 1.2rem 0;
   box-shadow: rgba(0, 0, 0, 0.09) 0px 25px 20px -20px;
@@ -58,4 +62,8 @@ body {
       }
     }
   }
+}
+
+main {
+  padding-top: 6.4rem;
 }

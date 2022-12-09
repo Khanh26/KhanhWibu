@@ -1,21 +1,31 @@
 $mobile-width: 480px;
 $tablet-width: 768px;
-$desktop-width: 1024px;
+$desktop-width: 1200px;
 
-@mixin mobile { @media (max-width: #{$mobile-width - 1px}) {
-  @content;
- }
+@mixin mobile {
+  @media (max-width: #{$mobile-width - 1px}) {
+    @content;
+  }
 }
 
-@mixin tablet { @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
-   @content;
- }
+@mixin mobile-tablet {
+  @media (min-width: #{$mobile-width}) and (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
 }
 
-@mixin desktop {   @media (min-width: #{$desktop-width}) {
-  @content;
- }
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
 }
 // Color
-$color-main: #00939C;
+$color-main: #00939c;
 $color-main-hover: #04696e;
+$bg-color: #a0d4dd27;
