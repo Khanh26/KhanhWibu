@@ -16,3 +16,10 @@
     }
   }
 }
+
+.banner__detail_wrapper {
+  & img {
+    width: 100%;
+    display: block;
+  }
+}

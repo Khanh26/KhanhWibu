@@ -3,10 +3,17 @@ import Banner from "../components/Banner";
 import Card from "../components/Card";
 import { useGlobalContext } from "../context";
 const Home = () => {
-  const { topTrending, upComing, GetTopTrending, GetUpcoming } =
-    useGlobalContext();
+  const {
+    topTrending,
+    upComing,
+    popularityRank,
+    GetTopTrending,
+    GetUpcoming,
+    GetPopularityRank,
+  } = useGlobalContext();
   GetTopTrending();
   GetUpcoming();
+  GetPopularityRank();
   return (
     <>
       <Banner data={topTrending} />
@@ -15,6 +22,11 @@ const Home = () => {
         data={upComing}
         title="Top 8 Upcoming Anime"
         viewMore="/up-coming-anime"
+      />
+      <Card
+        data={popularityRank}
+        title="Most Popular Anime"
+        viewMore="/most-popular-anime"
       />
     </>
   );

@@ -10,6 +10,8 @@ const reducer = (state, action) => {
       return { ...state, scrollbutton: action.payload };
     case "anime":
       return { ...state, anime: action.payload };
+    case "popularityRank":
+      return { ...state, popularityRank: action.payload };
     default:
       return state;
   }

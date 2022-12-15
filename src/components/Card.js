@@ -16,10 +16,10 @@ const Card = (props) => {
         <h2 className="block__card--title">{title && <>{title}</>}</h2>
         <div className="block__card--row">
           {data.map((item, key) => {
-            const { links, attributes } = item;
+            const { id, attributes } = item;
             return (
               <div className="block__card--column" key={key}>
-                <Link to={links.self} className="block__card_item">
+                <Link to={`anime/` + id} className="block__card_item">
                   <img
                     className="block__card_item--img-thumbnail"
                     src={attributes.posterImage.small}

@@ -8,6 +8,7 @@ const initialState = {
   upComing: [],
   scrollbutton: false,
   anime: [],
+  popularityRank: [],
 };
 
 const AppContext = React.createContext();
@@ -26,9 +27,19 @@ const AppProvider = ({ children }) => {
   const GetUpcoming = (limit = 8, offset = 0) => {
     useEffect(() => {
       API.get(
-        `anime?filter[status]=upcoming?filter[status]=upcoming&page[limit]=${limit}&page[offset]=${offset}`
+        `anime?filter[status]=upcoming&page[limit]=${limit}&page[offset]=${offset}`
       ).then((res) => {
         dispatch({ type: "updateUpcoming", payload: res.data.data });
+      });
+    }, [limit, offset]);
+  };
+
+  const GetPopularityRank = (limit = 8, offset = 0) => {
+    useEffect(() => {
+      API.get(
+        `anime?sort=popularityRank&page[limit]=${limit}&page[offset]=${offset}`
+      ).then((res) => {
+        dispatch({ type: "popularityRank", payload: res.data.data });
       });
     }, [limit, offset]);
   };
@@ -57,6 +68,7 @@ const AppProvider = ({ children }) => {
     GetTopTrending,
     GetUpcoming,
     GetAnimeById,
+    GetPopularityRank,
   };
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 };
