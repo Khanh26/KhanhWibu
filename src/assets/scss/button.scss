@@ -1,0 +1,17 @@
+.block__back-to-top {
+  padding: 0.6rem 0.8rem;
+  width: max-content;
+  cursor: pointer;
+  background-color: #fff;
+  border: 2px solid $color-main;
+  color: $color-main;
+  border-radius: 0.4rem;
+  position: fixed;
+  bottom: 12rem;
+  right: 2rem;
+
+  &:hover {
+    border-color: $color-main-hover;
+    color: $color-main-hover;
+  }
+}

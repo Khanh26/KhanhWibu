@@ -8,6 +8,7 @@ import "swiper/css/pagination";
 
 const Banner = (props) => {
   const { data } = props;
+  const banner = Array.isArray(data) ? data : [data];
   return (
     <Swiper
       className="banner__wrapper"
@@ -15,7 +16,7 @@ const Banner = (props) => {
       spaceBetween={0}
       slidesPerView={1}
       centeredSlides={true}
-      navigation
+      navigation={banner.length > 1}
       lazy
       loop
       initialSlide
@@ -24,7 +25,7 @@ const Banner = (props) => {
       }}
       pagination={{ clickable: true }}
     >
-      {data.map((item, key) => {
+      {banner.map((item, key) => {
         const { attributes } = item;
         return (
           <SwiperSlide key={key}>

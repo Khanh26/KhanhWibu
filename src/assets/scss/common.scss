@@ -59,6 +59,9 @@ body {
         &:hover {
           color: $color-main-hover;
         }
+        &.active {
+          color: $color-main-hover;
+        }
       }
     }
   }
@@ -66,4 +69,5 @@ body {
 
 main {
   padding-top: 6.4rem;
+  position: relative;
 }
