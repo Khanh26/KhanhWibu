@@ -3,7 +3,9 @@ import reducer from "./reducer";
 import API from "./Api";
 
 const initialState = {
-  loading: false,
+  loadingBanner: false,
+  loadingTopTrending: false,
+  loadingUpComing: false,
   topTrending: [],
   upComing: [],
   scrollbutton: false,
