@@ -15,10 +15,10 @@ const Banner = (props) => {
       spaceBetween={0}
       slidesPerView={1}
       centeredSlides={true}
-      navigation
-      lazy
-      loop
-      initialSlide
+      navigation={data.length > 1}
+      lazy={data.length > 1}
+      loop={data.length > 1}
+      // initialSlide={data.length > 1}
       autoplay={{
         delay: 7000,
       }}

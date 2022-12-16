@@ -16,7 +16,7 @@ function App() {
       <main>
         <Routes>
           <Route index element={<Home />} />
-          <Route path="/anime/:id" element={<Detail />} />
+          <Route path="/anime/:slug" element={<Detail />} />
           <Route path="/about" element={<About />} />
         </Routes>
         {scrollbutton && <ScrollToTop />}

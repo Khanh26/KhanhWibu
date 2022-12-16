@@ -55,19 +55,19 @@ const AppProvider = ({ children }) => {
     });
   });
 
-  const GetAnimeById = (id) => {
+  const GetAnimeBySlug = (slug = "") => {
     useEffect(() => {
-      API.get(`anime/${id}`).then((res) => {
+      API.get(`anime?filter[slug]=${slug}`).then((res) => {
         dispatch({ type: "anime", payload: res.data.data });
       });
-    }, [id]);
+    }, [slug]);
   };
 
   const value = {
     ...state,
     GetTopTrending,
     GetUpcoming,
-    GetAnimeById,
+    GetAnimeBySlug,
     GetPopularityRank,
   };
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
