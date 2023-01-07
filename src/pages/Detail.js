@@ -8,7 +8,6 @@ const Detail = () => {
   GetAnimeBySlug(slug)
   const [itemAnime] = anime
   const { attributes } = itemAnime ? itemAnime : {}
-  console.log(itemAnime)
   return (
     <>
       <Banner data={anime} className='aaaa' />

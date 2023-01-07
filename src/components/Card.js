@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { BsFillCaretRightFill } from 'react-icons/bs'
-
+import Loading from './Loading'
 import ItemCard from './ItemCard'
 
 const Card = (props) => {
   const { data, title, viewMore } = props
+  const [loading, setLoading] = useState(true)
+  useEffect(() => {
+    data.length > 0 ? setLoading(false) : setLoading(true)
+  }, [data.length])
   return (
     <div className='container'>
       <div className='block__card'>
@@ -13,8 +17,11 @@ const Card = (props) => {
         <div className='block__card--row'>
           {data.map((item, key) => {
             const { attributes } = item
-            console.log(item)
-            return <ItemCard key={key} data={attributes} />
+            return loading ? (
+              <Loading key={key} />
+            ) : (
+              <ItemCard key={key} data={attributes} />
+            )
           })}
         </div>
         <div className='block__card--view-more'>
