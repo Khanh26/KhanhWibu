@@ -15,14 +15,14 @@ const Card = (props) => {
       <div className='block__card'>
         <h2 className='block__card--title'>{title && <>{title}</>}</h2>
         <div className='block__card--row'>
-          {data.map((item, key) => {
-            const { attributes } = item
-            return loading ? (
-              <Loading key={key} />
-            ) : (
-              <ItemCard key={key} data={attributes} />
-            )
-          })}
+          {loading ? (
+            <Loading />
+          ) : (
+            data.map((item, key) => {
+              const { attributes } = item
+              return <ItemCard key={key} data={attributes} />
+            })
+          )}
         </div>
         <div className='block__card--view-more'>
           {viewMore && (
